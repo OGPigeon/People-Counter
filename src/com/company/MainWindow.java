@@ -28,7 +28,14 @@ import static org.bytedeco.opencv.global.opencv_imgproc.LINE_8;
 import static org.bytedeco.opencv.global.opencv_imgproc.rectangle;
 
 public class MainWindow extends JFrame {
+    int Starthr = 19;
+    int Startmin = 55;
 
+    int Startsec = 0;
+    double fps = 60;
+    int Currenthr = Starthr;
+    int Currentmin = Startmin;
+    double Currentsec = Startsec;
     ImageIcon image;
     YOLONet yolo;
     public MainWindow() {
@@ -142,6 +149,15 @@ public class MainWindow extends JFrame {
     }
 
     public BufferedImage process(BufferedImage img) {
+        Currentsec += 1/fps;
+        if(Currentsec >= 60){
+            Currentsec -= 60;
+            Currentmin++;
+        }
+        if(Currentmin >= 60){
+            Currentmin -= 60;
+            Currenthr++;
+        }
         int nPeople = 0;
         Mat mImg = bufferToMartix(img) ;
 
@@ -156,19 +172,17 @@ public class MainWindow extends JFrame {
 
         System.out.printf("Detected %d objects:\n", results.size());
         for(YOLONet.ObjectDetectionResult result : results) {
-            System.out.printf("\t%s - %.2f%%\n", result.className, result.confidence * 100f);
-            if(result.className.equals( "person")){
+            if (result.className.equals("person")) {
                 nPeople++;
             }
-            markROI( result.x , result.y , result.width , result.height , img);
+            markROI(result.x, result.y, result.width, result.height, img);
             // annotate on image
 //            rectangle(image,
 //                    new org.bytedeco.opencv.opencv_core.Point(result.x, result.y),
 //                    new Point(result.x + result.width, result.y + result.height),
 //                    Scalar.MAGENTA, 2, LINE_8, 0);
         }
-        System.out.println("Number of people are: "+nPeople);
-
+        System.out.println("Number of people are: "+nPeople + " in " + Currenthr + ":" + Currentmin + ":" + Currentsec);
         // test red square
         // for (int i = 0; i < 50; i++) {
         // for (int j = 0; j < 50; j++) {
