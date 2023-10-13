@@ -51,10 +51,6 @@ public class Screenshot {
         try {
             Thread.sleep(1000);
 
-            // // It saves screenshot to desired path
-            // String path =
-            // "G://我的雲端硬碟//教學//上課資料//Java_Evan//Project_AimBot//code//Screenshot.jpg";
-
             Screenshot sc = new Screenshot(0.5f);
 
             BufferedImage Image = sc.capture();
