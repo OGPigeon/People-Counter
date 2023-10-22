@@ -8,9 +8,10 @@ By using YOLOv4, we are implementing many of the past research contributions in 
 
 # The Why
 
-My sister went to work at a Fortune 500 company that specializes. Security and she talked about security cameras that could watch people and monitor their behavior to detect whether they were a threat. This peaked my interest so I created a simplified version that would be able to count the amount of people going in and out of an area.
+My sister went to work at a Fortune 500 company that specializes. My sister talked about how security cameras could watch, count, and monitor people and their behavior to detect whether they were a threat. This piqued my interest, so I created a simplified version that could count the number of people going in and out of an area.
 
 # Application
+Using [this video](https://www.youtube.com/watch?v=gFRtAAmiFbE) and our algorithm we were able to roughly count how many people entered the area from 12:00 AM to 8:00 AM. 
 ![Amount of people over Time](https://github.com/OGPigeon/People-Counter/assets/53824654/f526d4ee-01f7-441f-b0c1-693126f191b1)
 
 # Library Used
