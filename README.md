@@ -10,6 +10,8 @@ By using YOLOv4, we are implementing many of the past research contributions in 
 
 My sister went to work at a Fortune 500 company that specializes. Security and she talked about security cameras that could watch people and monitor their behavior to detect whether they were a threat. This peaked my interest so I created a simplified version that would be able to count the amount of people going in and out of an area.
 
+# Application
+![Amount of people over Time](https://github.com/OGPigeon/People-Counter/assets/53824654/f526d4ee-01f7-441f-b0c1-693126f191b1)
 
 # Library Used
 The used library is https://github.com/bytedeco/javacv
